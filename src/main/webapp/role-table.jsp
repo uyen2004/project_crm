@@ -94,8 +94,8 @@
                                 aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li>
-                        <a href="user-table.html" class="waves-effect"><i class="fa fa-user fa-fw"
-                                aria-hidden="true"></i><span class="hide-menu">Thành viên</span></a>
+                        <a href="user-table.jsp" class="waves-effect"><i class="fa fa-user fa-fw"
+                                                                         aria-hidden="true"></i><span class="hide-menu">Thành viên</span></a>
                     </li>
                     <li>
                         <a href="role-table.jsp" class="waves-effect"><i class="fa fa-modx fa-fw"
@@ -129,9 +129,27 @@
                         <h4 class="page-title">Danh sách quyền</h4>
                     </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12 text-right">
-                        <a href="role-add.jsp" class="btn btn-sm btn-success">Thêm mới</a>
+                        <a href="http://localhost:8080/crm/roleadd" class="btn btn-sm btn-success">Thêm mới</a>
                     </div>
                     <!-- /.col-lg-12 -->
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="page-title" id="exampleModalLongTitle">Role Update</h4>
+                                <label>Role Name</label><br>
+                                <input type="text" name="roleName" placeholder="Role Name" class="form-control form-control-line"><br>
+                                <label>Description</label><br>
+                                <input type="text" name="description" placeholder="Desciption" class="form-control form-control-line"><br>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /row -->
                 <div class="row">
@@ -154,26 +172,11 @@
                                             <td>${role.getName()}</td>
                                             <td>${role.getDescription()}</td>
                                             <td>
-                                                <a href="#" class="btn btn-sm btn-primary btn-update">Sửa</a>
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#roleModal">Update</button>
                                                 <a href="#" roleId = "${role.getId()}" class="btn btn-sm btn-danger btn-delete">Xóa</a>
                                             </td>
                                         </tr>
                                     </c:forEach>
-<%--                                        <tr>--%>
-<%--                                            <td>1</td>--%>
-<%--                                            <td>ROLE_ADMIN</td>--%>
-<%--                                            <td>Quản trị hệ thống</td>--%>
-
-<%--                                        </tr>--%>
-<%--                                        <tr>--%>
-<%--                                            <td>2</td>--%>
-<%--                                            <td>ROLE_USER</td>--%>
-<%--                                            <td>Nhân viên</td>--%>
-<%--                                            <td>--%>
-<%--                                                <a href="#" class="btn btn-sm btn-primary btn-update">Sửa</a>--%>
-<%--                                                <a href="#" roleId = "${role.getId()}"class="btn btn-sm btn-danger btn-delete">Xóa</a>--%>
-<%--                                            </td>--%>
-<%--                                        </tr>--%>
                                     </tbody>
                                 </table>
                             </div>

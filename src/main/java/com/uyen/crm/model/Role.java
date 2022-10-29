@@ -24,7 +24,6 @@ public class Role {
     public void setDescription(String description) {
         this.description = description;
     }
-
     private int id;
     private String name;
     private String description;

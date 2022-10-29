@@ -1,6 +1,7 @@
 package com.uyen.crm.repository;
 
 import com.uyen.crm.config.MysqlConnection;
+import com.uyen.crm.model.Role;
 import com.uyen.crm.model.Users;
 
 import java.sql.Connection;
@@ -35,4 +36,27 @@ public class UsersRepository {
         return list;
         }
 
+    public List<Users> getUsers() {
+        List<Users> list = new ArrayList<>();
+        try {
+            String query = "select * from users";
+            Connection connection = MysqlConnection.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Users user = new Users();
+                user.setId(resultSet.getInt("id"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPassword(resultSet.getString("password"));
+                user.setFullName(resultSet.getString("fullname"));
+                user.setAvatar(resultSet.getString("avatar"));
+                user.setRoleId(resultSet.getInt("role_id"));
+                list.add(user);
+            }
+            connection.close();
+        } catch (Exception e) {
+            System.out.println("Error get all user" + e.getMessage());
+        }
+        return list;
+    }
 }

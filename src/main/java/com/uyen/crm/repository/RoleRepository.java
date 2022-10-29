@@ -46,19 +46,22 @@ public class RoleRepository {
         return result;
     }
 
-    public Role addRole(String name, String description){
-        Role role = new Role();
-        try {
-            String query = "INSERT INTO roles( ) VALUES (?,?)";
-            Connection connection = MysqlConnection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.executeUpdate();
+    public int addRole(String name, String description){
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        int result = 0;
+    try {
+            String query = "INSERT INTO roles(name, description) VALUES (?,?)";
+            connection = MysqlConnection.getConnection();
+            preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, description);
+            result = preparedStatement.executeUpdate();
+            System.out.println("adding successfully");
             connection.close();
         }catch (Exception e){
-            System.out.println("Error in adding role");
+            System.out.println("Error in adding role, " +e.getMessage());
         }
-        return role;
+        return result;
     }
 }

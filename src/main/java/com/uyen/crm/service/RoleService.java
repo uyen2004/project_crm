@@ -18,7 +18,7 @@ public class RoleService extends HttpServlet {
         return  result > 0 ? true : false;
     }
 
-    public Role addRole(int id, String name, String description) {
+    public int addRole(String name, String description) {
         return roleRepository.addRole(name, description);
     }
 }

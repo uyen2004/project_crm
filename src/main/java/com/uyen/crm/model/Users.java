@@ -2,7 +2,10 @@ package com.uyen.crm.model;
 
 public class Users {
     private int id;
-
+    private String password;
+    private String fullName;
+    private String avatar;
+    private int roleId;
     public Users(){
 
     }
@@ -62,8 +65,5 @@ public class Users {
         this.roleId = roleId;
     }
 
-    private String password;
-    private String fullName;
-    private String avatar;
-    private int roleId;
+
 }

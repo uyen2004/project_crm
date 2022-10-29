@@ -19,11 +19,5 @@ public class RolePage extends HttpServlet {
         req.setAttribute("roles", roleService.getAllRoles());
         req.getRequestDispatcher("/role-table.jsp").forward(req, resp);
     }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        String description = req.getParameter("description");
-        req.setAttribute("role", roleRepository.addRole(name, description));
 
-    }
 }
