@@ -1,69 +1,79 @@
 package com.uyen.crm.model;
 
 public class Users {
-    private int id;
-    private String password;
-    private String fullName;
-    private String avatar;
-    private int roleId;
-    public Users(){
+	private int id;
+	private String password;
+	private String fullName;
+	private String avatar;
+	private int roleId;
 
-    }
-    public Users(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
+	public Users() {
 
-    private String email;
+	}
 
+	public Users(String email, String password) {
+		this.email = email;
+		this.password = password;
+	}
 
-    public int getId() {
-        return id;
-    }
+	private String email;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public String getFullName() {
-        return fullName;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
+	public String getFullName() {
+		return fullName;
+	}
 
-    public String getAvatar() {
-        return avatar;
-    }
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
+	public String getAvatar() {
+		return avatar;
+	}
 
-    public int getRoleId() {
-        return roleId;
-    }
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
+	public int getRoleId() {
+		return roleId;
+	}
 
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
 
+	public String getFirstName() {
+		String firstName = fullName.split(" ")[0];
+		return firstName;
+	}
+
+	public String getLastName() {
+		String[] parts = fullName.split(" ");
+		String lastName = parts[parts.length - 1];
+		return lastName;
+	}
 }

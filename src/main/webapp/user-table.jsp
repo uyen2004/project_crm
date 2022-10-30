@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -93,7 +91,7 @@
                                 aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li>
-                        <a href="user-table.jsp" class="waves-effect"><i class="fa fa-user fa-fw"
+                        <a href="user-table.html" class="waves-effect"><i class="fa fa-user fa-fw"
                                 aria-hidden="true"></i><span class="hide-menu">Thành viên</span></a>
                     </li>
                     <li>
@@ -132,44 +130,6 @@
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
-<%--                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">--%>
-<%--                    Launch demo modal--%>
-<%--                </button>--%>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="page-title" id="exampleModalLongTitle">User Update</h4>
-                                <label>Full Name</label><br>
-                                <input type="text" name="name" placeholder="fullname" class="form-control form-control-line"><br>
-                                <label>Email</label><br>
-                                <input type="text" name="email" placeholder="email" class="form-control form-control-line"><br>
-                                <label>Password</label><br>
-                                <input type="password" name="password" placeholder="password" class="form-control form-control-line"><br>
-                                <label>Avatar</label><br>
-                                <input type="text" name="avatar" placeholder="avatar" class="form-control form-control-line"><br>
-                                <label>Role</label><br>
-                                <select id="Role">
-                                    <option value="volvo" class="form-control form-control-line">Admin</option>
-                                    <option value="saab" class="form-control form-control-line">Manager</option>
-                                    <option value="opel" class="form-control form-control-line">User</option>
-                                </select>
-<%--                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--%>
-<%--                                    <span aria-hidden="true">&times;</span>--%>
-<%--                                </button>--%>
-                            </div>
-<%--                            <div class="modal-body">--%>
-<%--                                ...--%>
-<%--                            </div>--%>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- /row -->
                 <div class="row">
                     <div class="col-sm-12">
@@ -178,25 +138,159 @@
                                 <table class="table" id="example">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Full Name</th>
-                                            <th>Email </th>
+                                            <th>STT</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Username</th>
+                                            <th>Role</th>
                                             <th>#</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${users}" var="user">
                                         <tr>
-                                            <td>${user.getId()}</td>
-                                            <td>${user.getFullName()}</td>
-                                            <td>${user.getEmail()}</td>
+                                            <td>1</td>
+                                            <td>Deshmukh</td>
+                                            <td>Prohaska</td>
+                                            <td>@Genelia</td>
+                                            <td>admin</td>
                                             <td>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Sửa</button>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
                                                 <a href="#" class="btn btn-sm btn-danger">Xóa</a>
                                                 <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
                                             </td>
                                         </tr>
-                                    </c:forEach>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Deshmukh</td>
+                                            <td>Gaylord</td>
+                                            <td>@Ritesh</td>
+                                            <td>member</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Sanghani</td>
+                                            <td>Gusikowski</td>
+                                            <td>@Govinda</td>
+                                            <td>developer</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Roshan</td>
+                                            <td>Rogahn</td>
+                                            <td>@Hritik</td>
+                                            <td>supporter</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Joshi</td>
+                                            <td>Hickle</td>
+                                            <td>@Maruti</td>
+                                            <td>member</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Nigam</td>
+                                            <td>Eichmann</td>
+                                            <td>@Sonu</td>
+                                            <td>supporter</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Deshmukh</td>
+                                            <td>Prohaska</td>
+                                            <td>@Genelia</td>
+                                            <td>admin</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Deshmukh</td>
+                                            <td>Gaylord</td>
+                                            <td>@Ritesh</td>
+                                            <td>member</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Sanghani</td>
+                                            <td>Gusikowski</td>
+                                            <td>@Govinda</td>
+                                            <td>developer</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Roshan</td>
+                                            <td>Rogahn</td>
+                                            <td>@Hritik</td>
+                                            <td>supporter</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Joshi</td>
+                                            <td>Hickle</td>
+                                            <td>@Maruti</td>
+                                            <td>member</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>Nigam</td>
+                                            <td>Eichmann</td>
+                                            <td>@Sonu</td>
+                                            <td>supporter</td>
+                                            <td>
+                                                <a href="#" class="btn btn-sm btn-primary">Sửa</a>
+                                                <a href="#" class="btn btn-sm btn-danger">Xóa</a>
+                                                <a href="user-details.html" class="btn btn-sm btn-info">Xem</a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
